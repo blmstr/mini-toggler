@@ -11,10 +11,10 @@ The JS is using anchor links to know which content to toggle. All you need is to
 ### Tab style usage
 By adding a group-attribute to the togglers you can group them together making them __work just like tabs__; When you show one you also hide all the others in the group.
 
-    <a href="#content-1" class="mini-toggler" data-toggler-group="my-tabs">Tab 1</a>
+    <a href="#content-1" class="mini-toggler toggler-active" data-toggler-group="my-tabs">Tab 1</a>
     <a href="#content-2" class="mini-toggler" data-toggler-group="my-tabs">Tab 2</a>
 
-    <div id="content-1">Here is my first content</div>
+    <div id="content-1" class="hidden active">Here is my first content</div>
     <div id="content-2" class="hidden">Here is my second content.</div>
 
 ### No CSS is created
@@ -23,12 +23,13 @@ You need to create the css by yourself. All the Javascript is doing is adding / 
     .toggler-active {
       font-weight: bold;
     }
-    .active {
-      display: block;
-    }
     .hidden {
       display: none;
     }
+    .active {
+      display: block;
+    }
+    
 
 ## Browser support
 Because of the usage of `String.trim`, `querySelectorAll` and `addEventListener` without any polyfills (fallbacks) included the __oldest IE supported is IE8__.
